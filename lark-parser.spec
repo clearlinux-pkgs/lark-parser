@@ -4,7 +4,7 @@
 #
 Name     : lark-parser
 Version  : 0.7.0
-Release  : 3
+Release  : 4
 URL      : https://files.pythonhosted.org/packages/d7/07/a560f5278bd1dd4dbee0a262f455ca7dc20653092ee48e4221af86e94f51/lark-parser-0.7.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/d7/07/a560f5278bd1dd4dbee0a262f455ca7dc20653092ee48e4221af86e94f51/lark-parser-0.7.0.tar.gz
 Summary  : a modern parsing library
