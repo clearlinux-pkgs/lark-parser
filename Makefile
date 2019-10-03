@@ -1,5 +1,5 @@
 PKG_NAME := lark-parser
-URL = https://files.pythonhosted.org/packages/00/f9/1a3a7d79bb204096ca0e20b06a076ad8775939cb0a92eace83ddb1e8732a/lark-parser-0.7.5.tar.gz
+URL = https://files.pythonhosted.org/packages/66/96/14b173f0828d2d1f98067ff0bf844f6bc9a5c66b8a443ff539341d3ebeea/lark-parser-0.7.7.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
