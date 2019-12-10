@@ -4,7 +4,7 @@
 #
 Name     : lark-parser
 Version  : 0.7.8
-Release  : 13
+Release  : 14
 URL      : https://files.pythonhosted.org/packages/34/b8/aa7d6cf2d5efdd2fcd85cf39b33584fe12a0f7086ed451176ceb7fb510eb/lark-parser-0.7.8.tar.gz
 Source0  : https://files.pythonhosted.org/packages/34/b8/aa7d6cf2d5efdd2fcd85cf39b33584fe12a0f7086ed451176ceb7fb510eb/lark-parser-0.7.8.tar.gz
 Summary  : a modern parsing library
@@ -17,8 +17,9 @@ BuildRequires : buildreq-distutils3
 BuildRequires : util-linux
 
 %description
-# Lark - a modern parsing library for Python
-Parse any context-free grammar, FAST and EASY!
+Lark is a modern general-purpose parsing library for Python.
+        
+        With Lark, you can parse any context-free grammar, efficiently, with very little code.
 
 %package license
 Summary: license components for the lark-parser package.
@@ -48,14 +49,14 @@ python3 components for the lark-parser package.
 
 %prep
 %setup -q -n lark-parser-0.7.8
+cd %{_builddir}/lark-parser-0.7.8
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572618933
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1576011414
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -71,7 +72,7 @@ python3 setup.py build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test || :
+PYTHONPATH=%{buildroot}$(python -c "import sys; print(sys.path[-1])") python setup.py test || :
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
