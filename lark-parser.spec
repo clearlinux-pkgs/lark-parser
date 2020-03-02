@@ -4,7 +4,7 @@
 #
 Name     : lark-parser
 Version  : 0.8.1
-Release  : 17
+Release  : 18
 URL      : https://files.pythonhosted.org/packages/f9/78/c2b1381f878ccf85582a37ee54b5c2da7b7ffa855063823d8d1dfd4021d2/lark-parser-0.8.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f9/78/c2b1381f878ccf85582a37ee54b5c2da7b7ffa855063823d8d1dfd4021d2/lark-parser-0.8.1.tar.gz
 Summary  : a modern parsing library
@@ -16,8 +16,27 @@ Requires: lark-parser-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-# Lark - a modern parsing library for Python
-Parse any context-free grammar, FAST and EASY!
+Lark is a modern general-purpose parsing library for Python.
+
+With Lark, you can parse any context-free grammar, efficiently, with very little code.
+
+Main Features:
+ - Builds a parse-tree (AST) automagically, based on the structure of the grammar
+ - Earley parser
+    - Can parse all context-free grammars
+    - Full support for ambiguous grammars
+ - LALR(1) parser
+    - Fast and light, competitive with PLY
+    - Can generate a stand-alone parser
+ - CYK parser, for highly ambiguous grammars
+ - EBNF grammar
+ - Unicode fully supported
+ - Python 2 & 3 compatible
+ - Automatic line & column tracking
+ - Standard library of terminals (strings, numbers, names, etc.)
+ - Import grammars from Nearley.js
+ - Extensive test suite
+ - And much more!
 
 %package license
 Summary: license components for the lark-parser package.
@@ -40,6 +59,7 @@ python components for the lark-parser package.
 Summary: python3 components for the lark-parser package.
 Group: Default
 Requires: python3-core
+Provides: pypi(lark-parser)
 
 %description python3
 python3 components for the lark-parser package.
@@ -54,7 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579798843
+export SOURCE_DATE_EPOCH=1583165675
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
